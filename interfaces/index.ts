@@ -1,18 +1,25 @@
+export interface Address {
+  street: string;
+  city: string;
+  state?: string;
+  country: string;
+  zip?: string;
+}
+
+export interface Review {
+  name: string;
+  rating: number;
+  comment: string;
+  avatar: string;
+}
+
 export interface PropertyProps {
   name: string;
-  address: {
-    state: string;
-    city: string;
-    country: string;
-  };
-  rating: number;
-  category: string[];
-  price: number;
-  offers: {
-    bed: string;
-    shower: string;
-    occupants: string;
-  };
   image: string;
-  discount?: string;
+  rating: number;
+  address: Address;
+  description: string;
+  category: string[]; // amenities
+  price: number;
+  reviews: Review[];
 }
